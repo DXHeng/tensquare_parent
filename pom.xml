@@ -15,8 +15,8 @@
         <module>tensquare_common</module>
         <module>tensquare_base</module>
         <module>eureka-server</module>
-        <module>message-server</module>
         <module>user-server</module>
+        <module>message-server</module>
     </modules>
 
     <packaging>pom</packaging>
