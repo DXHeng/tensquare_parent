@@ -16,17 +16,23 @@
         <module>tensquare_base</module>
         <module>eureka-server</module>
         <module>user-server</module>
-        <module>message-server</module>
     </modules>
 
     <packaging>pom</packaging>
 
-
     <properties>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
+        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
+        <mybatis-plus.version>3.0.7.1</mybatis-plus.version>
+        <beetl.version>2.9.8</beetl.version>
     </properties>
+
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -34,26 +40,57 @@
         <relativePath/>
     </parent>
 
-
+    <!--
+         通俗一点 这里面的属性父类有了子类就不用重写
+    -->
     <dependencies>
+        <!--
+            SpringBoot:
+                        eureka
+                        zuul
+                        ribbon
+                        bus
+        -->
         <!--SpringBoot web启动-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--SpringBoot test启动-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
+
+        <!--
+            SpringCloud:
+                        eureka
+                        zuul
+                        ribbon
+                        bus
+        -->
+        <!--注册中心客户端 eureka-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+        <!--</dependency>-->
 
     </dependencies>
+
+    <dependencyManagement>
+        <!--
+            这里面的属性 子类要有的话 需要重写但是不需要写版本号
+        -->
+        <dependencies>
+
+
+            <!-- Import dependency management from Spring Cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
     <repositories>
         <repository>
@@ -73,6 +110,7 @@
             </snapshots>
         </repository>
     </repositories>
+
 
     <pluginRepositories>
         <pluginRepository>

@@ -1,4 +1,4 @@
-package com.settle.eureka;
+package com.tensquare.eureka;
 
 
 import org.springframework.boot.SpringApplication;

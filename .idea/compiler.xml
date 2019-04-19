@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
-        <module name="message-server" />
         <module name="tensquare_base" />
         <module name="tensquare_common" />
         <module name="user-server" />
