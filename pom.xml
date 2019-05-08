@@ -16,6 +16,7 @@
         <module>tensquare_base</module>
         <module>eureka-server</module>
         <module>user-server</module>
+        <module>zuul-server</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -27,9 +28,9 @@
         <java.version>1.8</java.version>
 
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
-        <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
-        <mybatis-plus.version>3.0.7.1</mybatis-plus.version>
-        <beetl.version>2.9.8</beetl.version>
+        <!--<spring-boot.version>2.0.6.RELEASE</spring-boot.version>-->
+        <!--<mybatis-plus.version>3.0.7.1</mybatis-plus.version>-->
+        <!--<beetl.version>2.9.8</beetl.version>-->
     </properties>
 
 
@@ -66,10 +67,10 @@
                         bus
         -->
         <!--注册中心客户端 eureka-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
 
     </dependencies>
 

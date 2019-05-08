@@ -2,6 +2,7 @@ package com.tensquare.message;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author: polarbear
@@ -9,11 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description: tensquare_parent
  */
 @SpringBootApplication
+@EnableDiscoveryClient
 public class UserServerApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(UserServerApplication.class,args);
     }
-
-
 }
